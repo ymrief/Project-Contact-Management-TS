@@ -1,0 +1,36 @@
+{
+  "name": "belajar-typescript-restful-api",
+  "version": "1.0.0",
+  "description": "Belajar TypeScript Restful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "Martinus",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "winston": "^3.19.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^8.0.6",
+    "@babel/preset-typescript": "^8.0.1",
+    "@jest/globals": "^30.5.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^7.2.1",
+    "babel-jest": "^30.5.2",
+    "jest": "^30.5.2",
+    "prisma": "^8.0.0-rc.17",
+    "supertest": "^7.3.0",
+    "typescript": "^7.0.2"
+  }
+}
