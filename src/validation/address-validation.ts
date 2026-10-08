@@ -1,5 +1,10 @@
 import {z, ZodType} from "zod";
-import {CreateAddressRequest} from "../model/address-model";
+import {
+    CreateAddressRequest,
+    GetAddressRequest,
+    RemoveAddressRequest,
+    UpdateAddressRequest
+} from "../model/address-model";
 
 export class AddressValidation {
     static readonly CREATE: ZodType<CreateAddressRequest> = z.object({
@@ -10,4 +15,24 @@ export class AddressValidation {
         country: z.string().min(1).max(100),
         postal_code: z.string().min(1).max(10)
     })
+
+    static readonly GET: ZodType<GetAddressRequest> = z.object(({
+        contact_id: z.number().positive(),
+        id: z.number().positive(),
+    }))
+
+    static readonly UPDATE: ZodType<UpdateAddressRequest> = z.object({
+        id: z.number().positive(),
+        contact_id: z.number().positive(),
+        street: z.string().min(1).max(255).optional(),
+        city: z.string().min(1).max(100).optional(),
+        province: z.string().min(1).max(100).optional(),
+        country: z.string().min(1).max(100),
+        postal_code: z.string().min(1).max(10)
+    })
+
+    static readonly REMOVE: ZodType<RemoveAddressRequest> = z.object(({
+        contact_id: z.number().positive(),
+        id: z.number().positive(),
+    }))
 }
